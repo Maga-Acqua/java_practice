@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset='UTF-8'/>
+		<title>EDIT - Books</title>
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet"></link>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+	</head>
+	<body>
+		<!--Begin HEADER -->
+		<header>
+			<!--Background books-header image, white letters -->
+			<div class="logo">
+				<a th:href = "@{/home}">Barter Books</a>
+			</div>
+		</header>
+		<!-- End HEADER -->
+		<!--Begin MAIN -->
+		<main>
+		<h1 class="new">Update Book</h1>
+			<form action="/edit" class="form" method="POST">
+			
+				<input type="hidden" th:field ="${book.idBook}"/>
+				
+				<label>Title</label>
+				<input type="text" th:field ="${book.name}"/>
+				
+				<label>Author</label>
+				<input type="text" th:field ="${details.author}"/>
+				
+				<label>Editorial</label>
+				<input type="text" th:field ="${details.editorial}"/>
+				
+				<label>Year of publication</label>
+				<input type="number" th:field ="${book.year}"/>
+				
+				<input type="submit" value="Save" class="btn"/>
+			
+			</form>
+		</main>
+		<!-- End MAIN -->
+		<!-- Begin ASIDE -->
+		<aside>
+			<!-- Barter Books Gallery Slides -->
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+				  <div class="numbertext">1 / 3</div>
+				  <img src="../img/barter1.jpg"></img>
+				  <div class="text">Barter Books Gallery</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">2 / 3</div>
+				  <img src="../img/barter2.jpg"></img>
+				  <div class="text">Barter Books Gallery</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">3 / 3</div>
+				  <img src="../img/barter3.jpg"></img>
+				  <div class="text">Barter Books Gallery</div>
+				</div>
+				<!-- It shows a heavy left-pointing angle quotation mark ornament -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<!-- It shows a heavy right-pointing angle quotation mark ornament -->
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br/>
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span> 
+			  <span class="dot" onclick="currentSlide(2)"></span> 
+			  <span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
+		</aside>
+		<!-- End ASIDE -->
+		<!-- Begin FOOTER -->
+		<footer>
+			<p> Barter Books, Alnwick Station, Northumberland NE66 2NP.</p>
+			<p>	+44 (0) 1665 604888 bb@barterbooks.co.uk</p>
+			<p>One of the largest secondhand bookshops in Britain</p>
+			<div class="copy">
+				<p>© 2020 Book store. All Rights Reserved | Design by Magali Acquaroli</p>
+			</div>
+			<div class="social">							
+				<a href="#"><i class="facebook"></i></a>
+				<a href="#"><i class="twitter"></i></a>
+				<a href="#"><i class="dribble"></i></a>	
+				<a href="#"><i class="google"></i></a>	
+				<a href="#"><i class="youtube"></i></a>	
+			</div>
+		<!-- JS -->
+		<script type="text/javascript" th:src="@{/js/functions.js}"></script>
+		</footer>
+		<!-- End FOOTER -->
+	</body>
+</html>
